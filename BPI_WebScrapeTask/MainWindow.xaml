@@ -1,0 +1,23 @@
+﻿<Window x:Class="BPI_WebScrapeTask.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BPI_WebScrapeTask"
+        mc:Ignorable="d"
+        Title="BPI Scrape task" Height="450" Width="800">
+    <Grid>
+        <DataGrid x:Name="ScrapeResultsGrid" HorizontalAlignment="Left" Height="297" Margin="10,20,0,0" VerticalAlignment="Top" Width="666" BeginningEdit="ScrapeResultsGrid_OnBeginningEdit">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Result rank" Binding="{Binding Rank}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Search term" Width="150" Binding="{Binding SearchPhrase}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Result URL" Width ="200" Binding="{Binding URL}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Result title" Width="300" Binding="{Binding Title}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button  Content="Save to CSV" HorizontalAlignment="Left" Margin="557,344,0,0" VerticalAlignment="Top" Width="144" Height="37" Click="ButtonSaveToCsvGrid"/>
+        <Button Content="Load search results" HorizontalAlignment="Left" Margin="56,344,0,0" VerticalAlignment="Top" Width="121" RenderTransformOrigin="-0.811,-0.458" Height="37" Click="LoadSearchGrid"/>
+
+    </Grid>
+</Window>
